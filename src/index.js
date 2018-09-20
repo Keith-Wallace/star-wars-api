@@ -1,1 +1,1 @@
-console.log('HELLO!')
+import App from './App.react'
