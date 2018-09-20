@@ -1,9 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
+import './app.scss'
+
+
 const App = () => {
   return (
-    <div>
+    <div className='app'>
       <p>React here!</p>
     </div>
   )
