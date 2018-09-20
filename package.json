@@ -1,0 +1,24 @@
+{
+  "name": "star-wars-api",
+  "version": "1.0.0",
+  "description": "Project which uses the Star Wars API to generate a list of the films that a particular character appears in.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Keith-Wallace/star-wars-api.git"
+  },
+  "author": "Keith Wallace",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Keith-Wallace/star-wars-api/issues"
+  },
+  "homepage": "https://github.com/Keith-Wallace/star-wars-api#readme",
+  "devDependencies": {
+    "webpack": "^4.19.1",
+    "webpack-cli": "^3.1.0"
+  }
+}
