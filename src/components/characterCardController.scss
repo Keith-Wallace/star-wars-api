@@ -1,0 +1,23 @@
+.character-card-controller {
+  background: #fff;
+  border: 1px solid black;
+  border-radius: 10px;
+
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 10px;
+}
+
+.character-card {
+  display: flex;
+
+  .character-image,
+  .character-bio {
+    flex: 1;
+  }
+
+  .character-image {
+
+    img { width: 200px; }
+  }
+}

@@ -1,16 +1,16 @@
-import React from 'react'
+import React, {Component} from 'react'
 import ReactDOM from 'react-dom'
+
+import CharacterCardController from './components/CharacterCardController.react'
 
 import './app.scss'
 
 
-const App = () => {
-  return (
-    <div className='app'>
-      <p>React here!</p>
-    </div>
-  )
-}
+const App = () => (
+  <div className='app'>
+    <CharacterCardController />
+  </div>
+)
 
 export default App
 
