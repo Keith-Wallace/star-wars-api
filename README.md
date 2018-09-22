@@ -12,4 +12,4 @@ This is an application that uses the [Star Wars API](https://swapi.co/), and lis
 ### How can I view this thing?
 Two ways!
 1. `git clone` this repo to your local machine and run `npm install` in your terminal. After all dependend packages are installed run `npm run start` and it will launch the application inside the browser.
-2. 
+2. [Heroku](https://star-wars-api-kw.herokuapp.com/)
