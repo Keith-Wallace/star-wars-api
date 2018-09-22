@@ -1,16 +1,17 @@
 import React, {Component} from 'react'
 
+import CharacterBio from './CharacterBio.react'
 import CharacterCardHeading from './CharacterCardHeading.react'
+import CharacterFilms from './CharacterFilms.react'
 import Loader from './Loader.react'
 import NotFoundPage from './NotFoundPage.react'
-import CharacterFilms from './CharacterFilms.react'
-
-import CHARACTERS_DATA from '../data/characters.json'
 
 import darthVaderImage from '../assets/Darth_Vader.jpg'
 import lukeSkywalkerImage from '../assets/Luke_Skywalker.jpg'
 import obiWanKenobiImage from '../assets/Obi_Wan_Kenobi.jpg'
 import rdD2Image from '../assets/R2_D2.jpg'
+
+import CHARACTERS_DATA from '../data/characters.json'
 
 import './characterCardController.scss'
 
@@ -110,16 +111,7 @@ export default class CharacterCardController extends Component {
                     <div className='character-image'>
                       {<img src={characterPhotos[name]} alt={name} />}
                     </div>
-                    <div className='character-bio'>
-                      <h2>Character Bio:</h2>
-                      <div>Birth Year: {birth_year}</div>
-                      <div>Eye Color: {eye_color}</div>
-                      <div>Hair Color: {hair_color}</div>
-                      <div>Gender: {gender}</div>
-                      <div>Height: {height}</div>
-                      <div>Mass: {mass}</div>
-                      <div>Skin Color: {skin_color}</div>
-                    </div>
+                    <CharacterBio characterData={this.state.characterData} />
                     <CharacterFilms films={films} />
                   </div>
                 )
