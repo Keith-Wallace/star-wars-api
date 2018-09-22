@@ -4,7 +4,8 @@
   "description": "Project which uses the Star Wars API to generate a list of the films that a particular character appears in.",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --mode development --open",
+    "dev": "webpack-dev-server --mode development --open",
+    "start": "webpack-dev-server --port $PORT --host 0.0.0.0",
     "build": "webpack --mode production"
   },
   "repository": {
