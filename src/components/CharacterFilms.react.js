@@ -1,5 +1,7 @@
 import React, {Component} from 'react'
 
+import moment from 'moment'
+
 import './characterFilms.scss'
 
 
@@ -13,6 +15,7 @@ export default class haracterFilms extends Component {
     }
 
     this.fetchAPIData = this.fetchAPIData.bind(this)
+    this.toggleFilmBlurb = this.toggleFilmBlurb.bind(this)
   }
 
   componentWillMount() { this.fetchAPIData(this.props.films) }
@@ -22,16 +25,17 @@ export default class haracterFilms extends Component {
       fetch(filmURL)
         .then(response => response.json())
           .then(filmData => {
-            var joined = this.state.useThisData.concat(filmData);
-
-            this.setState({useThisData: joined})
+            this.setState({useThisData: this.state.useThisData.concat(filmData)})
           })
     })
   }
 
-  render() {
-    console.log('this.state.useThisData: ', this.state.useThisData)
+  toggleFilmBlurb(event) {
+    console.log('=> ', event.target.parentElement.classList)
+    event.target.parentElement.classList.toggle('show-all')
+  }
 
+  render() {
     if (this.state.useThisData) {
       return (
         <div className='character-films'>
@@ -39,13 +43,21 @@ export default class haracterFilms extends Component {
           {
             this.state.useThisData.map(film => (
               <div className='film-details' key={film.title}>
-                {film.title}<br />
-                {film.release_date}
+                <h3>{film.title}</h3>
+                <div className='film-detail'>
+                  <div className='release-date'>
+                    <strong>Release Date:</strong> {moment(film.release_date, 'YYYY-MM-DD').format('dddd, MMMM DD YYYY')}
+                  </div>
+                  <div className='film-blurb'>
+                    {film.opening_crawl}
+                    <div className='toggle-button' onClick={this.toggleFilmBlurb}></div>
+                  </div>
+                </div>
               </div>
             ))
           }
         </div>
       )
-    } else return null
+    }
   }
 }

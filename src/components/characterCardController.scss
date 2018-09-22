@@ -2,22 +2,21 @@
   background: #fff;
   border: 1px solid black;
   border-radius: 10px;
-
-  margin: 0 auto;
+  margin: 40px auto;
   max-width: 800px;
-  padding: 10px;
+  padding: 20px;
 }
 
 .character-card {
   display: flex;
 
-  .character-image,
-  .character-bio {
-    flex: 1;
-  }
-
   .character-image {
+    flex: 1;
+    margin-right: 20px;
 
-    img { width: 200px; }
+    img {
+      border-radius: 10px;
+      width: 200px;
+    }
   }
 }
